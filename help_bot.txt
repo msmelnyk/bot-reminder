@@ -14,13 +14,19 @@
     db.createCollection("accounts")
 
     /*schema db:
-        collections:
-            pull_remind:
-                "user_id": userID,
-                "text": text,
-                "datetime_remind": datetime
-                "Created_At": datetime.now()  
+        pull_remind:
+            'user_id': user_id,
+            'username': username,
+            'text': text,
+            'datetime': timestamp,
+            'reminded': 0,
+            'Created_At': datetime.now(),
 
+        history:
+            'user_id': message.from_user.id,
+            'username': message.from_user.username,
+            'text': message.text,
+            'Created_At': datetime.now(),
     */
 
 
