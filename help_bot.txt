@@ -1,0 +1,27 @@
+---BASH---
+#UP mongo
+    sudo apt install mongodb
+    mongo
+#config mongo for bot
+    //create new DB 'botDB'
+    use botDB 
+    
+    //create collection 'pull_remind' with all declared fields(scroll down for info) and insert first document(first data)
+    db.pull_remind.insert({user_id: "test_user_id", text: "test text", datetime_remind: new Date(), Created_At: new Date()})
+
+//db.createUser({user: "bot", pwd: "0IuyNzWYy750wwhxouyA", roles: [{role: "readWrite"}]})
+
+    db.createCollection("accounts")
+
+    /*schema db:
+        collections:
+            pull_remind:
+                "user_id": userID,
+                "text": text,
+                "datetime_remind": datetime
+                "Created_At": datetime.now()  
+
+    */
+
+
+
