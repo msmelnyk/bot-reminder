@@ -8,8 +8,6 @@ import schedule
 from config import * # config.py
 
 
-
-
 bot = telebot.TeleBot(TOKEN)
 client = MongoClient(MONGO_url)
 
@@ -19,7 +17,6 @@ history = db.history
 try: db.command('serverStatus')
 except Exception as e: print(e)
 else: print('---Connect to DB: successful')
-
 
 def check_remind():
     start = datetime.now()
@@ -84,7 +81,9 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
-    bot.reply_to(message, f'Help: This bot it`s a pet-project developed by Melnyk M.S., Marchenko V.O. and Vereschak P.V, from group СЗ-382Б in National Aviation.')
+    bot.reply_to(message, '''Help: This bot it`s a pet-project developed by 
+        Melnyk M.S., Marchenko V.O. and Vereschak P.V, 
+        from group СЗ-382Б in National Aviation.''')
     
 @bot.message_handler(content_types=['text'])
 def get_message(message):
